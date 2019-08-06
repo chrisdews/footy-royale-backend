@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  round_number: 1
+  name: MyString
+  prev_winner: MyString
+
+two:
+  round_number: 1
+  name: MyString
+  prev_winner: MyString
