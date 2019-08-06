@@ -1,8 +1,24 @@
-# footy-royale-backend
-backend built with Ruby on Rails
+# README
 
-Footy Royale
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-A battle royale fantasy football game. 
+Things you may want to cover:
 
-Competing against other managers, predict game results in the English Premier League. You can only pick each team once so choose carefully. If your team doesn’t win that weekend, you are eliminated. Survivors proceed to the next round each week until 1 worthy champion remains.
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
