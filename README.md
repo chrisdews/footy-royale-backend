@@ -10,7 +10,7 @@ Competing against other managers, predict game results in the English Premier Le
 
 
 
-* Ruby version: 2.61
+* Ruby version: 2.6.1
 
 * System dependencies
 
