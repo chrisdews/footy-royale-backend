@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :test_fixtures
   resources :predictions
   resources :matches
   resources :user_leagues

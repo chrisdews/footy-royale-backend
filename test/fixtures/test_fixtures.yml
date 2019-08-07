@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: 1
+  event: 1
+  finished: false
+  kickoff_time: MyString
+  started: false
+  team_a: 1
+  team_a_score: 1
+  team_h: 1
+  team_h_score: 1
+
+two:
+  code: 1
+  event: 1
+  finished: false
+  kickoff_time: MyString
+  started: false
+  team_a: 1
+  team_a_score: 1
+  team_h: 1
+  team_h_score: 1

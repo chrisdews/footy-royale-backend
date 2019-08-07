@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_06_164714) do
+ActiveRecord::Schema.define(version: 2019_08_07_122849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_08_06_164714) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "royale_round"
     t.index ["match_id"], name: "index_predictions_on_match_id"
     t.index ["team_id"], name: "index_predictions_on_team_id"
     t.index ["user_id"], name: "index_predictions_on_user_id"
@@ -48,6 +49,27 @@ ActiveRecord::Schema.define(version: 2019_08_06_164714) do
     t.string "img"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "test_fixtures", force: :cascade do |t|
+    t.integer "code"
+    t.integer "event"
+    t.boolean "finished"
+    t.string "kickoff_time"
+    t.boolean "started"
+    t.integer "team_a"
+    t.integer "team_a_score"
+    t.integer "team_h"
+    t.integer "team_h_score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "finished_provisional"
+    t.integer "fpl_id"
+    t.integer "minutes"
+    t.boolean "provisional_start_time"
+    t.string "stats", default: [], array: true
+    t.integer "team_h_difficulty"
+    t.integer "team_a_difficulty"
   end
 
   create_table "user_leagues", force: :cascade do |t|

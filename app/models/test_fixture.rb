@@ -1,0 +1,2 @@
+class TestFixture < ApplicationRecord
+end
