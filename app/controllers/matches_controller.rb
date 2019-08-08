@@ -3,4 +3,9 @@ class MatchesController < ApplicationController
         matches = Match.all
         render json:matches
     end
+
+    def update_matches_from_api
+
+        render json: {message: 'all updated'}
+    end
 end

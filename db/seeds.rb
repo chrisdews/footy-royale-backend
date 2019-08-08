@@ -17,28 +17,141 @@ Match.delete_all
 Prediction.delete_all
 Team.delete_all
 UserLeague.delete_all
-TestFixture.delete_all
 
 user = User.create(username: 'dewsy', win_count: 2, password:'1234')
-league = League.create(round_number: 0, name: 'There Can Only Be One', prev_winner: 'nil')
+league = League.create(round_number: 1, name: 'There Can Only Be One', prev_winner: 'nil')
 userleague = UserLeague.create(user_id: 1, league_id:1, user_active: true)
-team = Team.create(name: 'Arsenal', img:1)
-match = Match.create(league_id: 1, team_id:1)
-prediction = Prediction.create(match_id: 1, team_id: 1, user_id:1, royale_round:1)
+# team = Team.create(name: 'Arsenal', img:1)
+# match = Match.create(league_id: 1, team_id:1)
 
-# tf1 = TestFixture.create(code: 12345, event: 1, finished: true, kickoff_time: '3pm', started: false, team_a: 1, team_a_score: 0, team_h: 2, team_h_score: 0)
-# tf2 = TestFixture.create(code: 12346, event: 1, finished: true, kickoff_time: '1pm', started: true, team_a: 3, team_a_score: 1, team_h: 4, team_h_score: 0)
-# tf3 = TestFixture.create(code: 12347, event: 1, finished: true, kickoff_time: '3pm', started: false, team_a: 5, team_a_score: 0, team_h: 6, team_h_score: 0)
-# tf4 = TestFixture.create(code: 12375, event: 1, finished: true, kickoff_time: '3pm', started: false, team_a: 7, team_a_score: 0, team_h: 8, team_h_score: 0)
-# tf5 = TestFixture.create(code: 12325, event: 1, finished: true, kickoff_time: '3pm', started: false, team_a: 9, team_a_score: 0, team_h: 10, team_h_score: 0)
-# tf6 = TestFixture.create(code: 12315, event: 1, finished: true, kickoff_time: '3pm', started: false, team_a: 11, team_a_score: 0, team_h: 12, team_h_score: 0)
-# tf7 = TestFixture.create(code: 123115, event: 1, finished: true, kickoff_time: '3pm', started: false, team_a: 13, team_a_score: 0, team_h: 14, team_h_score: 0)
-# tf8 = TestFixture.create(code: 1235, event: 1, finished: true, kickoff_time: '3pm', started: false, team_a: 15, team_a_score: 0, team_h: 16, team_h_score: 0)
-# tf9 = TestFixture.create(code: 123115, event: 1, finished: true, kickoff_time: '3pm', started: false, team_a: 17, team_a_score: 0, team_h: 18, team_h_score: 0)
-# tf10 = TestFixture.create(code: 12341115, event: 1, finished: true, kickoff_time: '3pm', started: false, team_a: 19, team_a_score: 0, team_h: 20, team_h_score: 0)
-# tf11 = TestFixture.create(code: 1231145, event: 2, finished: true, kickoff_time: '3pm', started: false, team_a: 1, team_a_score: 0, team_h: 3, team_h_score: 0)
-# tf12 = TestFixture.create(code: 1231145, event: 2, finished: true, kickoff_time: '3pm', started: false, team_a: 2, team_a_score: 0, team_h: 5, team_h_score: 0)
 
+teams = [
+  {
+      "name": "Arsenal",
+      "short_name": "Arsenal",
+      "club_code": "ARS",
+      "stadium": "Emirates Stadium"  
+  },
+  {
+    "name": "Aston Villa",
+      "short_name": "A Villa",
+      "club_code": "AVL",
+      "stadium": "Villa Park"
+  },
+  {
+      "name": "Bournemouth",
+      "short_name": "Bournemouth",
+      "club_code": "BOU",
+      "stadium": "Vitality Stadium"
+  },
+  {
+      "name": "Brighton and Hove Albion",
+      "short_name": "Brighton",
+      "club_code": "BHA",
+      "stadium": "Amex Stadium",
+  },
+  {
+      "name": "Burnley",
+      "short_name": "Burnley",
+      "club_code": "BUR",
+      "stadium": "Turf Moor"
+  },
+  {
+    "name": "Chelsea",
+      "short_name": "Chelsea",
+      "club_code": "CHE",
+      "stadium": "Stamford Bridge"
+  },
+  {
+    "name": "Crystal Palace",
+      "short_name": "C Palace",
+      "club_code": "CRY",
+      "stadium": "Selhurst Park"
+  },
+  {
+    "name": "Everton",
+      "short_name": "Everton",
+      "club_code": "EVE",
+      "stadium": "Goodison Park"
+  },
+  {
+    "name": "Leicester City",
+      "short_name": "Leicester",
+      "club_code": "LEI",
+      "stadium": "King Power Stadium"
+  },
+  {
+    "name": "Liverpool",
+      "short_name": "Liverpool",
+      "club_code": "LIV",
+      "stadium": "Anfield"
+  },
+  {
+    "name": "Manchester City",
+      "short_name": "Man City",
+      "club_code": "MCI",
+      "stadium": "Etihad Stadium"
+  },
+  {
+    "name": "Manchester United",
+      "short_name": "Man Utd",
+      "club_code": "MUN",
+      "stadium": "Old Trafford"
+  },
+  {
+    "name": "Newcastle United",
+      "short_name": "Newcastle",
+      "club_code": "NEW",
+      "stadium": "St. James' Park"
+  },
+  {
+    "name": "Norwich City",
+      "short_name": "Norwich",
+      "club_code": "NOR",
+      "stadium": "Carrow Road"
+  },
+  {
+    "name": "Sheffield United",
+      "short_name": "Sheffield Utd",
+      "club_code": "SHU",
+      "stadium": "Bramhall Lane"
+  },
+  {
+    "name": "Southampton",
+      "short_name": "Southampton",
+      "club_code": "SOU",
+      "stadium": "St. Mary's Stadium"
+  },
+  {
+    "name": "Tottenham Hotspur",
+      "short_name": "Spurs",
+      "club_code": "TOT",
+      "stadium": "Tottenham Hotspur Stadium"
+  },
+  {
+    "name": "Watford",
+      "short_name": "Watford",
+      "club_code": "WAT",
+      "stadium": "Vicarage Road"
+  },
+  {
+    "name": "West Ham United",
+      "short_name": "West Ham",
+      "club_code": "WHU",
+      "stadium": "London Stadium"
+  },
+  {
+    "name": "Wolverhampton Wanderers",
+      "short_name": "Wolves",
+      "club_code": "WOL",
+      "stadium": "Molineux Stadium"
+  }
+]
+
+teams.each do |team|
+  Team.create team
+end 
+ 
 fixtures = [
     {
       "code": 1059702,
@@ -7642,6 +7755,19 @@ fixtures = [
     }
   ]
 
-  fixtures.each do |fix|
-    TestFixture.create fix
+fixtures.each do |fix|
+    match = Match.create ({
+      "api_code": fix[:code],
+      "event": fix[:event],
+      "team_a_id": fix[:team_a],
+      "team_h_id": fix[:team_h],
+      "team_a_score": nil,
+      "team_h_score": nil
+    })
+    if !match.valid?
+      p match.errors.full_messages
+    end
 end 
+
+m = Match.first
+prediction = Prediction.create(league: league, match: m, team: m.team_a, user: User.first, royale_round:1)
