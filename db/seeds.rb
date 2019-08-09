@@ -19,8 +19,18 @@ Team.delete_all
 UserLeague.delete_all
 
 user = User.create(username: 'dewsy', win_count: 2, password:'1234')
+user2 = User.create(username: 'dave', win_count: 0, password:'1234')
+user3 = User.create(username: 'dobbie', win_count: 1, password:'1234')
+user4 = User.create(username: 'doreen', win_count: 0, password:'1234')
+user5 = User.create(username: 'dab boy', win_count: 0, password:'1234')
+
 league = League.create(round_number: 1, name: 'There Can Only Be One', prev_winner: 'nil')
 userleague = UserLeague.create(user_id: 1, league_id:1, user_active: true)
+userleague2 = UserLeague.create(user_id: 2, league_id:1, user_active: true)
+userleague3 = UserLeague.create(user_id: 3, league_id:1, user_active: false)
+userleague4 = UserLeague.create(user_id: 4, league_id:1, user_active: false)
+userleague5 = UserLeague.create(user_id: 5, league_id:1, user_active: true)
+
 # team = Team.create(name: 'Arsenal', img:1)
 # match = Match.create(league_id: 1, team_id:1)
 
@@ -7770,4 +7780,8 @@ fixtures.each do |fix|
 end 
 
 m = Match.first
+m2 = Match.all
+
 prediction = Prediction.create(league: league, match: m, team: m.team_a, user: User.first, royale_round:1)
+prediction2 = Prediction.create(league: league, match: m2[4], team: m2[4].team_h, user: User.first, royale_round:1)
+prediction3 = Prediction.create(league: league, match: m2[3], team: m2[3].team_a, user: User.first, royale_round:1)

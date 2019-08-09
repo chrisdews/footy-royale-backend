@@ -10,6 +10,26 @@ class League < ApplicationRecord
     def current_matches
         Match.where(event: League.current_week)
     end
+
+    # get the all users from user_leagues.user_active
+    # then filter by this league
+
+    def users_league_active
+        self.user_leagues.where(user_active: true)
+    end
+
+    def users_league_inactive
+        self.user_leagues.where(user_active: false)
+    end
+
+    def active_users
+        users_league_active.map{|i| i.user.username}
+    end
+
+    def inactive_users
+        users_league_inactive.map{|i| i.user.username}
+    end
+
 end
 
 # {
