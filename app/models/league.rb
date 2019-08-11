@@ -2,8 +2,14 @@ class League < ApplicationRecord
     has_many :user_leagues
     has_many :users, through: :user_leagues
     has_many :matches
+    has_many :predictions
+
 
     def self.current_week
+        1
+    end
+
+    def temp_user_id
         1
     end
 
@@ -28,6 +34,22 @@ class League < ApplicationRecord
 
     def inactive_users
         users_league_inactive.map{|i| i.user.username}
+    end
+
+    def current_predictions
+        self.predictions.where(royale_round: self.round_number)
+    end
+
+    def users_submitted_predictions
+        current_predictions.map{|p| p.user.username}
+    end
+
+    def user_predictions
+        self.predictions.select{|p| p.user_id == temp_user_id}       
+    end
+
+    def all_teams
+        Team.all
     end
 
 end

@@ -1,6 +1,6 @@
 
 class LeagueSerializer < ActiveModel::Serializer
-    attributes :id, :round_number, :name, :active_users, :active_users, :inactive_users, :current_matches
+    attributes :id, :round_number, :name, :active_users, :active_users, :inactive_users, :current_matches, :users_submitted_predictions, :user_predictions, :all_teams
 
     def initialize(league, user)
         super(league)
@@ -26,5 +26,9 @@ class LeagueSerializer < ActiveModel::Serializer
     def current_matches
         self.object.current_matches.map{|m| MatchSerializer.new(m, @user, self.object)}
     end
+
+    
+
+
   
   end
