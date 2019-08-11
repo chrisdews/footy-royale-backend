@@ -7782,8 +7782,6 @@ end
 m = Match.first
 m2 = Match.all
 
-prediction = Prediction.create(league: league, match: m, team: m.team_a, user: User.first, royale_round:1)
-prediction = Prediction.create(league: league, match: m2[13], team: m2[13].team_a, user: User.first, royale_round:2)
 prediction2 = Prediction.create(league: league, match: m2[4], team: m2[4].team_h, user: user2, royale_round:1)
 prediction3 = Prediction.create(league: league, match: m2[3], team: m2[3].team_a, user: user3, royale_round:1)
 prediction4 = Prediction.create(league: league, match: m2[11], team: m2[11].team_a, user: user3, royale_round:2)
