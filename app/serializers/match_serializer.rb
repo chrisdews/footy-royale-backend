@@ -1,8 +1,14 @@
 
 class MatchSerializer < ActiveModel::Serializer
-    attributes :id, :team_h, :team_a, :team_a_score, :team_h_score, :team_h_available, :team_a_available
+    attributes :id, :team_h, :team_a, :team_a_score, :team_h_score
+    attribute :team_h_available, if: :has_user_and_league
+    attribute :team_a_available, if: :has_user_and_league
 
-    def initialize(match, user, league)
+    def has_user_and_league
+        @user != nil && @league != nil
+    end
+
+    def initialize(match, user = nil, league = nil)
         super(match)
         @user = user
         @league = league
