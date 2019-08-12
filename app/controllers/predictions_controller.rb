@@ -6,7 +6,10 @@ class PredictionsController < ApplicationController
 
     def create
         # debugger
-        prediction = Prediction.create(prediction_params)
+        prediction = Prediction.find_or_create_by(royale_round: prediction_params[:royale_round], user_id: prediction_params[:user_id])
+
+        prediction.update prediction_params
+
         if prediction.valid?
             render json: { prediction: prediction}, status: :created
         else
