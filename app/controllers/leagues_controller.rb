@@ -20,6 +20,6 @@ class LeaguesController < ApplicationController
     private
 
     def league_params
-        params.require(:leagueObj).permit(:id, :round_number)
+        params.require(:leagueObj).permit(:id, :round_number, :current_week)
     end
 end

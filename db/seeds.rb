@@ -24,7 +24,7 @@ user3 = User.create(username: 'dobbie', win_count: 1, password:'1234')
 user4 = User.create(username: 'doreen', win_count: 0, password:'1234')
 user5 = User.create(username: 'dab boy', win_count: 0, password:'1234')
 
-league = League.create(round_number: 1, name: 'There Can Only Be One', prev_winner: 'nil')
+league = League.create(round_number: 1, current_week: 1, name: 'There Can Only Be One', prev_winner: 'nil')
 userleague = UserLeague.create(user_id: 1, league_id:1, user_active: true)
 userleague2 = UserLeague.create(user_id: 2, league_id:1, user_active: true)
 userleague3 = UserLeague.create(user_id: 3, league_id:1, user_active: false)

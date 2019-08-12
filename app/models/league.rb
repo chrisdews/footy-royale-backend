@@ -5,16 +5,16 @@ class League < ApplicationRecord
     has_many :predictions
 
 
-    def self.current_week
-        3
-    end
+    # def self.current_week
+    #     3
+    # end
 
     def temp_user_id
         1
     end
 
     def current_matches
-        Match.where(event: League.current_week)
+        Match.where(event: self.current_week)
     end
 
     # get the all users from user_leagues.user_active
