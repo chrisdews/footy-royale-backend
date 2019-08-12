@@ -6,7 +6,7 @@ class League < ApplicationRecord
 
 
     def self.current_week
-        1
+        3
     end
 
     def temp_user_id
@@ -53,17 +53,3 @@ class League < ApplicationRecord
     end
 
 end
-
-# {
-#     id
-#     h_team: {
-#         img_src: 'spurs.com/logo',
-#         name,
-#         available: false
-#     }
-#     a_team: {
-#         img_src: 'huddersfield.com/logo',
-#         name,
-#         available: true
-#     }
-# }
