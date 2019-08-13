@@ -28,6 +28,10 @@ class League < ApplicationRecord
         self.user_leagues.where(user_active: false)
     end
 
+    def user_league_current_user
+        self.user_leagues.where(user_id: temp_user_id)
+    end
+
     def active_users
         users_league_active.map{|i| i.user.username}
     end
@@ -51,5 +55,7 @@ class League < ApplicationRecord
     def all_teams
         Team.all
     end
+
+    
 
 end
