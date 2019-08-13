@@ -5,10 +5,19 @@ class LeaguesController < ApplicationController
     end
 
     def create
+    end
+
+    def update
         # this should be update, but CORs errors...
         league = League.find_by(id: league_params[:id])
+        
+        league.check_prediction_losers.each do |p|
+           ul = p.user.user_leagues.find_by(league_id: league.id)
+           ul.update(user_active: false)
+        end
+        # trying to set user_league.user_active = false
+
         league.update league_params
-        # league.current_week
         # debugger
         if league.valid?
             render json: { league: league}, status: :created

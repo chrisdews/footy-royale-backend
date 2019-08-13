@@ -5,8 +5,9 @@ class MatchesController < ApplicationController
     end
 
     # should be update but cors error..
-    def create
+    def update
         match = Match.find_by(id: match_params[:id])
+
         match.update match_params
         if match.valid?
             render json: { match: match}, status: :created

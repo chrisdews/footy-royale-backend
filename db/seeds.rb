@@ -23,14 +23,23 @@ user2 = User.create(username: 'dave', win_count: 0, password:'1234')
 user3 = User.create(username: 'dobbie', win_count: 1, password:'1234')
 user4 = User.create(username: 'doreen', win_count: 0, password:'1234')
 user5 = User.create(username: 'dab boy', win_count: 0, password:'1234')
+user6 = User.create(username: 'harry', win_count: 2, password:'1234')
+user7 = User.create(username: 'happy ', win_count: 0, password:'1234')
+user8 = User.create(username: 'habbard', win_count: 1, password:'1234')
+user9 = User.create(username: 'horace', win_count: 0, password:'1234')
+user10 = User.create(username: 'hope', win_count: 0, password:'1234')
 
 league = League.create(round_number: 1, current_week: 1, name: 'There Can Only Be One', prev_winner: 'nil')
 userleague = UserLeague.create(user_id: 1, league_id:1, user_active: true)
 userleague2 = UserLeague.create(user_id: 2, league_id:1, user_active: true)
 userleague3 = UserLeague.create(user_id: 3, league_id:1, user_active: false)
-userleague4 = UserLeague.create(user_id: 4, league_id:1, user_active: false)
+userleague4 = UserLeague.create(user_id: 4, league_id:1, user_active: true)
 userleague5 = UserLeague.create(user_id: 5, league_id:1, user_active: true)
-
+userleague6 = UserLeague.create(user_id: 6, league_id:1, user_active: true)
+userleague7 = UserLeague.create(user_id: 7, league_id:1, user_active: true)
+userleague8 = UserLeague.create(user_id: 8, league_id:1, user_active: true)
+userleague9 = UserLeague.create(user_id: 9, league_id:1, user_active: true)
+userleague10 = UserLeague.create(user_id: 10, league_id:1, user_active: true)
 # team = Team.create(name: 'Arsenal', img:1)
 # match = Match.create(league_id: 1, team_id:1)
 
@@ -7779,9 +7788,17 @@ fixtures.each do |fix|
     end
 end 
 
-m = Match.first
-m2 = Match.all
 
-prediction2 = Prediction.create(league: league, match: m2[4], team: m2[4].team_h, user: user2, royale_round:1)
-prediction3 = Prediction.create(league: league, match: m2[3], team: m2[3].team_a, user: user3, royale_round:1)
-prediction4 = Prediction.create(league: league, match: m2[11], team: m2[11].team_a, user: user3, royale_round:2)
+m = Match.all
+
+prediction1 = Prediction.create(league: league, match: m[1], team: m[1].team_h, user: user, royale_round:1)
+prediction2 = Prediction.create(league: league, match: m[2], team: m[2].team_h, user: user2, royale_round:1)
+prediction3 = Prediction.create(league: league, match: m[3], team: m[3].team_h, user: user3, royale_round:1)
+prediction4 = Prediction.create(league: league, match: m[4], team: m[4].team_h, user: user4, royale_round:1)
+prediction5 = Prediction.create(league: league, match: m[5], team: m[5].team_h, user: user5, royale_round:1)
+prediction6 = Prediction.create(league: league, match: m[6], team: m[6].team_h, user: user6, royale_round:1)
+prediction7 = Prediction.create(league: league, match: m[7], team: m[7].team_h, user: user7, royale_round:1)
+prediction8 = Prediction.create(league: league, match: m[8], team: m[8].team_h, user: user8, royale_round:1)
+prediction9 = Prediction.create(league: league, match: m[9], team: m[9].team_h, user: user9, royale_round:1)
+prediction10 = Prediction.create(league: league, match: m[10], team: m[10].team_a, user: user10, royale_round:1)
+
