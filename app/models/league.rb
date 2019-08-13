@@ -56,6 +56,11 @@ class League < ApplicationRecord
         Team.all
     end
 
+    def check_prediction_losers
+        current_predictions.select{|p| p.match.winner != p.team_id}
+    end
+    # why doesnt this work?
+
     
 
 end
