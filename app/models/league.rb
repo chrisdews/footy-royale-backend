@@ -4,21 +4,10 @@ class League < ApplicationRecord
     has_many :matches
     has_many :predictions
 
-
-    # def self.current_week
-    #     3
-    # end
-
-    def temp_user_id
-        1
-    end
-
     def current_matches
         Match.where(event: self.current_week)
     end
 
-    # get the all users from user_leagues.user_active
-    # then filter by this league
 
     def users_league_active
         self.user_leagues.where(user_active: true)
@@ -28,8 +17,8 @@ class League < ApplicationRecord
         self.user_leagues.where(user_active: false)
     end
 
-    def user_league_current_user
-        self.user_leagues.where(user_id: temp_user_id)
+    def user_league_current_user(current_user)
+        self.user_leagues.where(user_id: current_user.id)
     end
 
     def active_users
@@ -48,8 +37,8 @@ class League < ApplicationRecord
         current_predictions.map{|p| p.user.username}
     end
 
-    def user_predictions
-        self.predictions.select{|p| p.user_id == temp_user_id}       
+    def user_predictions(current_user)
+        self.predictions.select{|p| p.user_id == current_user}       
     end
 
     def all_teams
@@ -59,11 +48,5 @@ class League < ApplicationRecord
     def check_prediction_losers
         current_predictions.select{|p| p.match.winner != p.team_id}
     end
-
-    
-    
-
-
-    
 
 end

@@ -23,8 +23,11 @@ class LeagueSerializer < ActiveModel::Serializer
         self.object.current_matches.map{|m| MatchSerializer.new(m, @user, self.object)}
     end
 
-    
+    def user_league_current_user
+        self.object.user_league_current_user(@user)
+    end
 
-
-  
+    def user_predictions
+        self.object.user_predictions(@user)
+    end
   end

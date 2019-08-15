@@ -49,3 +49,5 @@ group :test do
 end
 
 gem 'active_model_serializers'
+
+gem "jwt", "~> 2.2"
