@@ -38,7 +38,8 @@ class League < ApplicationRecord
     end
 
     def user_predictions(current_user)
-        self.predictions.select{|p| p.user_id == current_user}       
+        # debugger
+        self.predictions.select{|p| p.user_id == current_user.id}       
     end
 
     def all_teams
