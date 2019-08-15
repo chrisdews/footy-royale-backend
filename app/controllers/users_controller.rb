@@ -9,13 +9,10 @@ class UsersController < ApplicationController
     end
 
     def create 
-        user = User.find_or_create_by( user_params ) 
-        userleague = UserLeague.create(user_id: user.id, league_id:1, user_active: true)
-        userleague.league.current_user(user.id)
-        # add win_count: 0
-        # debugger
+        user = User.create( user_params ) 
         
         if user.valid?
+            userleague = UserLeague.create(user_id: user.id, league_id:1, user_active: true)
             render json: { user: user, token: issue_token(user_id: user.id) }, status: :created
         else
             render json: { errors: user.errors.full_messages }, status: :not_accepted
@@ -25,7 +22,7 @@ class UsersController < ApplicationController
     private 
 
     def user_params
-        params.require(:newuserObj).permit(:username, :password, :win_count)
+        params.require(:user).permit(:username, :password, :win_count)
     end
     # :password, 
 end
