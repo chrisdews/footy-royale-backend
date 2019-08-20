@@ -59,7 +59,7 @@ class League < ApplicationRecord
         #         ul.update(user_active: false)
         #     end
 
-        debugger
+        # debugger
     end
 
 
