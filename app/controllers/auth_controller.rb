@@ -7,7 +7,7 @@ class  AuthController < ApplicationController
         if user && user.authenticate(user_login_params[:password])
             render json: { user: user, token: issue_token(user_id: user.id) }, status: :accepted
         else
-            render json: { message: 'Invalid username or password' }, status: :unauthorized
+            render json: { errors: ['Invalid username or password'] }, status: :unauthorized
         end
     end
 
@@ -16,7 +16,7 @@ class  AuthController < ApplicationController
         if user
             render json: { user: user, token: issue_token(user_id: user.id) }, status: :accepted
         else 
-            render json: { errors: 'invalid token '}, status: :unauthorized
+            render json: { errors: ['invalid token'] }, status: :unauthorized
         end
     end
 
