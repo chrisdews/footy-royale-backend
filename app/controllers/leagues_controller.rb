@@ -16,6 +16,10 @@ class LeaguesController < ApplicationController
            ul.update(user_active: false)
         end
 
+        league.set_false_if_no_prediction
+
+        # debugger
+
         league.update league_params
         # debugger
         if league.valid?

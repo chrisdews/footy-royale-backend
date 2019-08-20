@@ -47,7 +47,21 @@ class League < ApplicationRecord
     end
 
     def check_prediction_losers
-        current_predictions.select{|p| p.match.winner != p.team_id}
+        # debugger
+        current_predictions.select{|p| p.team_id != p.match.winner}
     end
+
+    def set_false_if_no_prediction
+        # users_league_active.each do |ul|
+        #     if ul.user.predictions.select(|p| p.royale_round == self.round_number)
+        #         true
+        #     else
+        #         ul.update(user_active: false)
+        #     end
+
+        debugger
+    end
+
+
 
 end
