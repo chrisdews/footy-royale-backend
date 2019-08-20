@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'database_cleaner'
+# require 'database_cleaner'
 
-DatabaseCleaner.strategy = :truncation
-DatabaseCleaner.clean
+# DatabaseCleaner.strategy = :truncation
+# DatabaseCleaner.clean
 
 User.delete_all
 League.delete_all
@@ -29,17 +29,17 @@ user8 = User.create(username: 'habbard', win_count: 1, password:'1234')
 user9 = User.create(username: 'horace', win_count: 0, password:'1234')
 user10 = User.create(username: 'hope', win_count: 0, password:'1234')
 
-league = League.create(round_number: 1, current_week: 2, name: 'There Can Only Be One', prev_winner: 'nil')
-userleague = UserLeague.create(user_id: 1, league_id:1, user_active: true)
-userleague2 = UserLeague.create(user_id: 2, league_id:1, user_active: true)
-userleague3 = UserLeague.create(user_id: 3, league_id:1, user_active: false)
-userleague4 = UserLeague.create(user_id: 4, league_id:1, user_active: true)
-userleague5 = UserLeague.create(user_id: 5, league_id:1, user_active: true)
-userleague6 = UserLeague.create(user_id: 6, league_id:1, user_active: true)
-userleague7 = UserLeague.create(user_id: 7, league_id:1, user_active: true)
-userleague8 = UserLeague.create(user_id: 8, league_id:1, user_active: true)
-userleague9 = UserLeague.create(user_id: 9, league_id:1, user_active: true)
-userleague10 = UserLeague.create(user_id: 10, league_id:1, user_active: true)
+league = League.create(round_number: 1, current_week: 3, name: 'There Can Only Be One', prev_winner: 'nil')
+userleague = UserLeague.create(user: user, league: league, user_active: true)
+userleague2 = UserLeague.create(user: user2, league: league, user_active: true)
+userleague3 = UserLeague.create(user: user3, league: league, user_active: false)
+userleague4 = UserLeague.create(user: user4, league: league, user_active: true)
+userleague5 = UserLeague.create(user: user5, league: league, user_active: true)
+userleague6 = UserLeague.create(user: user6, league: league, user_active: true)
+userleague7 = UserLeague.create(user: user7, league: league, user_active: true)
+userleague8 = UserLeague.create(user: user8, league: league, user_active: true)
+userleague9 = UserLeague.create(user: user9, league: league, user_active: true)
+userleague10 = UserLeague.create(user: user10, league: league, user_active: true)
 # team = Team.create(name: 'Arsenal', img:1)
 # match = Match.create(league_id: 1, team_id:1)
 
