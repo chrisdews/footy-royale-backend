@@ -58,7 +58,7 @@ class League < ApplicationRecord
         #     else
         #         ul.update(user_active: false)
         #     end
-
+        # test
         # debugger
     end
 
