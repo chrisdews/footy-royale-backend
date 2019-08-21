@@ -10,6 +10,7 @@
 
 # DatabaseCleaner.strategy = :truncation
 # DatabaseCleaner.clean
+
 UserLeague.destroy_all
 Prediction.destroy_all
 League.destroy_all

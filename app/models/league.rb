@@ -48,7 +48,7 @@ class League < ApplicationRecord
 
     def check_prediction_losers
         # debugger
-        current_predictions.select{|p| p.team_id != p.match.winner}
+        current_predictions.select{|p| p.img_id != p.match.winner}
     end
 
     def set_false_if_no_prediction

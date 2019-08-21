@@ -20,6 +20,6 @@ class PredictionsController < ApplicationController
     private 
 
     def prediction_params
-        params.require(:newPredictionObj).permit(:match_id, :team_id, :user_id, :league_id, :royale_round)
+        params.require(:newPredictionObj).permit(:match_id, :team_id, :user_id, :league_id, :royale_round, :img_id)
     end
 end
