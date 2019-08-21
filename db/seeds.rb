@@ -23,7 +23,7 @@ Team.destroy_all
 
 
 
-# user = User.create(username: 'dewsy', win_count: 2, password:'1234')
+user = User.create(username: 'dewsy', win_count: 2, password:'1234')
 # user2 = User.create(username: 'dave', win_count: 0, password:'1234')
 # user3 = User.create(username: 'dobbie', win_count: 1, password:'1234')
 # user4 = User.create(username: 'doreen', win_count: 0, password:'1234')
@@ -34,8 +34,8 @@ Team.destroy_all
 # user9 = User.create(username: 'horace', win_count: 0, password:'1234')
 # user10 = User.create(username: 'hope', win_count: 0, password:'1234')
 
-# league = League.create(round_number: 1, current_week: 3, name: 'There Can Only Be One', prev_winner: 'nil')
-# userleague = UserLeague.create(user: user, league: league, user_active: true)
+league = League.create(round_number: 1, current_week: 3, name: 'There Can Only Be One', prev_winner: 'nil')
+userleague = UserLeague.create(user: user, league: league, user_active: true)
 # userleague2 = UserLeague.create(user: user2, league: league, user_active: true)
 # userleague3 = UserLeague.create(user: user3, league: league, user_active: false)
 # userleague4 = UserLeague.create(user: user4, league: league, user_active: true)
