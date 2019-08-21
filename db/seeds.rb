@@ -54,121 +54,142 @@ teams = [
       "name": "Arsenal",
       "short_name": "Arsenal",
       "club_code": "ARS",
-      "stadium": "Emirates Stadium"  
+      "stadium": "Emirates Stadium",
+      "db_id": "1"  
   },
   {
     "name": "Aston Villa",
       "short_name": "A Villa",
       "club_code": "AVL",
-      "stadium": "Villa Park"
+      "stadium": "Villa Park",
+      "db_id": "2"  
   },
   {
       "name": "Bournemouth",
       "short_name": "Bournemouth",
       "club_code": "BOU",
-      "stadium": "Vitality Stadium"
+      "stadium": "Vitality Stadium",
+      "db_id": "3"  
   },
   {
       "name": "Brighton and Hove Albion",
       "short_name": "Brighton",
       "club_code": "BHA",
       "stadium": "Amex Stadium",
+      "db_id": "4"  
+
   },
   {
       "name": "Burnley",
       "short_name": "Burnley",
       "club_code": "BUR",
-      "stadium": "Turf Moor"
+      "stadium": "Turf Moor",
+      "db_id": "5"  
   },
   {
     "name": "Chelsea",
       "short_name": "Chelsea",
       "club_code": "CHE",
-      "stadium": "Stamford Bridge"
+      "stadium": "Stamford Bridge",
+      "db_id": "6"  
   },
   {
     "name": "Crystal Palace",
       "short_name": "C Palace",
       "club_code": "CRY",
-      "stadium": "Selhurst Park"
+      "stadium": "Selhurst Park",
+      "db_id": "7"  
   },
   {
     "name": "Everton",
       "short_name": "Everton",
       "club_code": "EVE",
-      "stadium": "Goodison Park"
+      "stadium": "Goodison Park",
+      "db_id": "8"  
   },
   {
     "name": "Leicester City",
       "short_name": "Leicester",
       "club_code": "LEI",
-      "stadium": "King Power Stadium"
+      "stadium": "King Power Stadium",
+      "db_id": "9"  
   },
   {
     "name": "Liverpool",
       "short_name": "Liverpool",
       "club_code": "LIV",
-      "stadium": "Anfield"
+      "stadium": "Anfield",
+      "db_id": "10"  
   },
   {
     "name": "Manchester City",
       "short_name": "Man City",
       "club_code": "MCI",
-      "stadium": "Etihad Stadium"
+      "stadium": "Etihad Stadium",
+      "db_id": "11"  
   },
   {
     "name": "Manchester United",
       "short_name": "Man Utd",
       "club_code": "MUN",
-      "stadium": "Old Trafford"
+      "stadium": "Old Trafford",
+      "db_id": "12"  
   },
   {
     "name": "Newcastle United",
       "short_name": "Newcastle",
       "club_code": "NEW",
-      "stadium": "St. James' Park"
+      "stadium": "St. James' Park",
+      "db_id": "13"  
   },
   {
     "name": "Norwich City",
       "short_name": "Norwich",
       "club_code": "NOR",
-      "stadium": "Carrow Road"
+      "stadium": "Carrow Road",
+      "db_id": "14"  
   },
   {
     "name": "Sheffield United",
       "short_name": "Sheffield Utd",
       "club_code": "SHU",
-      "stadium": "Bramhall Lane"
+      "stadium": "Bramhall Lane",
+      "db_id": "15"  
   },
   {
     "name": "Southampton",
       "short_name": "Southampton",
       "club_code": "SOU",
-      "stadium": "St. Mary's Stadium"
+      "stadium": "St. Mary's Stadium",
+      "db_id": "16"  
   },
   {
     "name": "Tottenham Hotspur",
       "short_name": "Spurs",
       "club_code": "TOT",
-      "stadium": "Tottenham Hotspur Stadium"
+      "stadium": "Tottenham Hotspur Stadium",
+      "db_id": "17"  
   },
   {
     "name": "Watford",
       "short_name": "Watford",
       "club_code": "WAT",
-      "stadium": "Vicarage Road"
+      "stadium": "Vicarage Road",
+      "db_id": "18"  
   },
   {
     "name": "West Ham United",
       "short_name": "West Ham",
       "club_code": "WHU",
-      "stadium": "London Stadium"
+      "stadium": "London Stadium",
+      "db_id": "19"  
   },
   {
     "name": "Wolverhampton Wanderers",
       "short_name": "Wolves",
       "club_code": "WOL",
-      "stadium": "Molineux Stadium"
+      "stadium": "Molineux Stadium",
+      "db_id": "20"  
   }
 ]
 

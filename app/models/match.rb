@@ -3,11 +3,13 @@ class Match < ApplicationRecord
 
 
   def team_h
-    Team.find(self.team_h_id)
+    Team.find_by(db_id: self.team_h_id)
+
+    
   end
 
   def team_a
-    Team.find(self.team_a_id)
+    Team.find_by(db_id: self.team_a_id)
   end
 
   def winner
