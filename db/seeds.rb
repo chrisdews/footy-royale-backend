@@ -10,13 +10,17 @@
 
 # DatabaseCleaner.strategy = :truncation
 # DatabaseCleaner.clean
-
-User.destroy_all
-League.destroy_all
-Match.destroy_all
-Prediction.destroy_all
-Team.destroy_all
 UserLeague.destroy_all
+League.destroy_all
+Prediction.destroy_all
+Match.destroy_all
+User.destroy_all
+Team.destroy_all
+
+
+
+
+
 
 # user = User.create(username: 'dewsy', win_count: 2, password:'1234')
 # user2 = User.create(username: 'dave', win_count: 0, password:'1234')
