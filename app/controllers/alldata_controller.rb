@@ -10,7 +10,7 @@ class AlldataController < ApplicationController
         @merged_content = {
             league: LeagueSerializer.new(@current_user.leagues.first, @current_user)
         }
-
+        
         render json: @merged_content
 
 
